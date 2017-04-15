@@ -14,6 +14,19 @@ int main(int argc, char *argv[]){
     pro = atoi(argv[1]);
     con = atoi(argv[2]);
     size = atoi(argv[3]);
+    
+    //create producer
+   for(i=0;i<pro;i++){
+    pthread_create(); 
+   
+   }
+    
+   //create consumer
+   for(i=0;i<con;i++){
+   pthread_create(); 
+
+   }
+    
 
     printf("DONE");
     exit(0);
