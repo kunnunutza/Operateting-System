@@ -6,6 +6,10 @@
 #include<stdlib.h>
 #include<string.h>
 #include <unistd.h>
+#define BUFFER_SIZE 100    
+    
+//void Producer(void *param);
+//void Consumer(void *param);    
 
 int main(int argc, char *argv[]){
     int pro,con,size // #of producer,#of consumer,stack size
@@ -13,5 +17,6 @@ int main(int argc, char *argv[]){
     con = atoi(argv[2]);
     size = atoi(argv[3]);
 
-
+    printf("DONE");
+    exit(0);
 }
