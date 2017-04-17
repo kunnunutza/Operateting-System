@@ -1,5 +1,5 @@
-//Nutthanicha Yongpoomputta 5888090
-//Inthukorn Limpachaveng 5888261
+// Nutthanicha Yongpoomputta 5888090
+// Inthukorn Limpachaveng 5888261
 // section 1
 
 #include<stdio.h>
@@ -7,47 +7,57 @@
 #include<string.h>
 #include <unistd.h>
 #include<pthread.h>
-#define BUFFER_SIZE 100
+#include<semaphore.h>
+#define true 1
+#define stack_size 10
+pthread_mutex_t mutex;
+
+void*Producer(void *a);
+void*Consumer(void *a);
+
+
+int pro,con,i,rc,n,stack[stack_size],top =-1,size,n,counter; // #of producer,#of consumer,stack size,number element.#of buffer
+
 
 int main(int argc, char *argv[]){
-    int pro,con,size,num[100],n,i // #of producer,#of consumer,stack size
+    
     pro = atoi(argv[1]);
     con = atoi(argv[2]);
     size = atoi(argv[3]);
     
-    //create producer
-   for(i=0;i<pro;i++){
-    pthread_create(); 
+    for(i=0;i<n;i++){
+    scanf("%d",&stack[i]);
+    }
+       //create producer and consumer thread
+   for(j=0;j<pro;j++){
+
+      pthread_create(&tp[j],NULL,Producer,NULL)
+   }
    
+   for(j=0;j<con;j++){
+
+      pthread_create(&tc[j],NULL,Consumer,NULL)
    }
-    
-   //create consumer
-   for(i=0;i<con;i++){
-   pthread_create(); 
+   
+   for(j=0;i<pro;j++){
+       pthread_join(tp[j],NULL);}
+	
+   for(j=0;i<con;j++){
+       pthread_join(tc[j],NULL);}
 
-   }
-    
-
-    printf("DONE");
-    exit(0);
-
+   exit(0);
 }
 
-//Producer method
-/*void Producer(void *param) {
-       while(true){
-       
+/*
+void *Consumer(void *a)
+{
+  
+ }
 
-      }
-
-      pthread_exit(NULL);
-}
-
-//Consumer method
-
-void Consumer(void *param) {
-       
-
-     
-     pthread_exit(NULL);
-}*/
+void *Producer(void *a)
+{
+   
+ 
+ }
+*/
+    
